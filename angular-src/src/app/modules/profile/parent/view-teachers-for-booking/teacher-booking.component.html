@@ -1,0 +1,30 @@
+<div class="divider" style="padding-top:50px;"></div>
+<div class="container">
+
+  <table class="table table-striped table-hover" id="UsersTable">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of Users">
+       <td>
+         <ul *ngIf="user.role == 'Teacher'">
+          <strong>{{ user.name.firstName }} {{ user.name.lastName }}</strong>
+         </ul></td>
+        <td>
+          <ul *ngIf="user.role == 'Teacher'">
+          <strong>{{ user.role }}</strong>
+          </ul></td>
+        <td>
+          <ul *ngIf="user.role == 'Teacher'">
+          <button (click)="viewUser(user)" class="btn btn-primary">Book Session</button>
+          </ul></td>
+        </tr>
+    </tbody>
+    <br>
+  </table>
+</div>
